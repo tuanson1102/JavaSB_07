@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 public class Job {
   private String id;
   private String company;
-  private String name;
   private String title;
   private String description;
   private String city;

@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <h2 align="center">Thêm công việc</h2>
     <form action="#" th:action="@{/job/add}" th:object="${job}" method="post" name="job" align="center">
         Company:<input type="text" th:field="*{company}"> <br>
-        Name:<input type="text" th:field="*{name}"> <br>
        title:<input type="text" th:field="*{title}"> <br>
        description:  <input type="text" th:field="*{description}"> <br>
        city:
        <td><select th:field ="*{city}"><br><br>
-        <option value="">-- Select a company --</option>
+        <option value="">-- Select a city --</option>
         <option 
         th:each="ct:${city}" 
         th:text="${ct.label}" 

@@ -24,7 +24,6 @@
           <tr th:each="job, iStat:${jobs}">
             <th scope="row" th:text="${iStat.index} +1"></th>
             <td th:text="${job.company}"><br></td>
-            <td><a th:href="|/job/${job.id}|" th:text="${job.name}"></a><br></td>
             <td th:text="${job.title}"></td>
             <td th:text="${job.description}"></td>
             <td th:text="${job.city}"></td>
