@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+</head>
+<body>
+  <h1>List Job</h1>
+    <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Company</th>
+            <th scope="col">Name</th>
+            <th scope="col">title</th>
+            <th scope="col">description</th>
+            <th scope="col">City</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="job, iStat:${jobs}">
+            <th scope="row" th:text="${iStat.index} +1"></th>
+            <td th:text="${job.company}"><br></td>
+            <td><a th:href="|/job/${job.id}|" th:text="${job.name}"></a><br></td>
+            <td th:text="${job.title}"></td>
+            <td th:text="${job.description}"></td>
+            <td th:text="${job.city}"></td>
+            <td><a th:href="@{job/delete/{id}(id=${job.id})}" class="btn btn-primary" style="background-color:red" >DELETE</a></td>
+            <td><a th:href="@{job/edit/{id}(id=${job.id})}" class="btn btn-primary" style="background-color: lightskyblue" >EDIT</a></td>
+          </tr>     
+        </tbody>
+      </table>
+      <button><a href="/job/add">ADD</a></button>
+</body>
+</html>
